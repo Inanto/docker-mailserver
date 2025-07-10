@@ -72,6 +72,8 @@ services:
         - type=registry,ref=ghcr.io/jeboehm/mailserver-web:buildcache
     restart: on-failure:5
     env_file: .env
+    volumes:
+      - web-file:/var/www/html
     # For use with jwilder/nginx-proxy.
     # environment:
     #   - VIRTUAL_HOST=mail.example.com
